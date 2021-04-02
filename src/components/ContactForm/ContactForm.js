@@ -2,12 +2,17 @@ import React, { Component } from 'react';
 import styles from './ContactForm.module.scss';
 import { connect } from 'react-redux';
 import { addContact } from '../../redux/App/app-operations';
+import { fetchContacts } from '../../redux/App/app-operations';
 
 class ContactForm extends Component {
   state = {
     name: '',
     number: '',
   };
+
+  componentDidMount() {
+    this.props.fetchContacts();
+  }
 
   onChangeInput = event => {
     this.setState({
@@ -73,6 +78,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   onSubmit: (name, number) => dispatch(addContact(name, number)),
+  fetchContacts: () => dispatch(fetchContacts()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactForm);
