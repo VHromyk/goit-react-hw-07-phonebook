@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import styles from './Filter.module.scss';
 import PropTypes from 'prop-types';
 import { deleteContact } from '../../redux/App/app-operations';
+import { filterContacts } from '../../redux/ContactForm/contactForm-selectors';
 
 const Filter = ({ list, deleteContact }) => {
   return (
@@ -30,15 +31,8 @@ Filter.propTypes = {
   deleteContact: PropTypes.func,
 };
 
-const filterContacts = (filter, allContacts) => {
-  const normalized = filter.toLowerCase();
-  return allContacts.filter(contact =>
-    contact.name.toLowerCase().includes(normalized),
-  );
-};
-
-const mapStateToProps = ({ contacts: { filter, items } }) => ({
-  list: filterContacts(filter, items),
+const mapStateToProps = state => ({
+  list: filterContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({

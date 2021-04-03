@@ -4,9 +4,7 @@ import {
   addContactSuccess,
   deleteContactSuccess,
   changeFilter,
-  fetchContactRequest,
   fetchContactSuccess,
-  fetchContactError,
 } from './app-actions';
 
 const items = createReducer([], {

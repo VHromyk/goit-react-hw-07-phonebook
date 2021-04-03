@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/App/app-actions';
 import styles from './ContactList.module.scss';
 import PropTypes from 'prop-types';
+import { getFilter } from '../../redux/ContactForm/contactForm-selectors';
 
 const ContactList = ({ value, changeFilter }) => (
   <label className={styles.label}>
@@ -22,7 +23,7 @@ ContactList.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  value: state.contacts.filter,
+  value: getFilter(state),
 });
 
 const mapDispatchToProps = dispatch => ({
