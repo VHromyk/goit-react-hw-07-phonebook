@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styles from './Filter.module.scss';
 import PropTypes from 'prop-types';
 import { deleteContact } from '../../redux/App/app-operations';
-import { filterContacts } from '../../redux/ContactForm/contactForm-selectors';
+import { filterContacts } from '../../redux/contacts-selectors';
 
 const Filter = ({ list, deleteContact }) => {
   return (

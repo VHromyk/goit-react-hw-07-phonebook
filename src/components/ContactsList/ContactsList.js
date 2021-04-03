@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { changeFilter } from '../../redux/App/app-actions';
 import styles from './ContactList.module.scss';
 import PropTypes from 'prop-types';
-import { getFilter } from '../../redux/ContactForm/contactForm-selectors';
+import { getFilter } from '../../redux/contacts-selectors';
 
 const ContactList = ({ value, changeFilter }) => (
   <label className={styles.label}>

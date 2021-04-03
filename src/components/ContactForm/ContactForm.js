@@ -3,7 +3,7 @@ import styles from './ContactForm.module.scss';
 import { connect } from 'react-redux';
 import { addContact } from '../../redux/App/app-operations';
 import { fetchContacts } from '../../redux/App/app-operations';
-import { getContacts } from '../../redux/ContactForm/contactForm-selectors';
+import { getContacts } from '../../redux/contacts-selectors';
 
 class ContactForm extends Component {
   state = {
